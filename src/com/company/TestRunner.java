@@ -1,13 +1,25 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class TestRunner {
 
     public void Run(){
         testInstrumentsCart();
         testMusician();
         testBand();
+        testOrchestra();
 
 
+
+    }
+
+    private void testOrchestra() {
+        Orchestra oc = new Orchestra();
+
+
+        String message = String.format("This Orchestra has %d musician(s)", oc.getTotalMusician());
+        System.out.println(message);
 
     }
 
@@ -18,9 +30,10 @@ public class TestRunner {
     }
 
     private void testMusician() {
-        Musician m = new Musician("Piano");
+        Musician m1 = new Musician("Piano");
+        m1.setMusicianCount(1);
+        System.out.println(m1.toString());
 
-        System.out.println(m.toString());
     }
 
 
@@ -35,6 +48,8 @@ public class TestRunner {
         cart.addInstruments(i2);
 
         System.out.println(cart.ShowInstruments());
+
+
     }
 
 
